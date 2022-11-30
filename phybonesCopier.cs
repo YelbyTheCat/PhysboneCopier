@@ -16,7 +16,7 @@ public class phybonesCopier : EditorWindow
     [MenuItem("Yelby/Phybone Copier")]
     public static void ShowWindow()
     {
-        GetWindow<phybonesCopier>("Physbone Copier 1.0.0");
+        GetWindow<phybonesCopier>("Physbone Copier 1.0.1");
     }
 
     private void OnGUI()
@@ -70,7 +70,7 @@ public class phybonesCopier : EditorWindow
             // Physbones
             foreach (string sourceBoneName in sourceBones.Keys)
             {
-                if (!sourceBones.ContainsKey(sourceBoneName)) continue;
+                if (!targetBones.ContainsKey(sourceBoneName)) continue;
                 // Clear previous Colliders
                 var targetPhysboneList = targetBones[sourceBoneName].GetComponents<Physbone>();
                 for (int i = 0; i < targetPhysboneList.Length; i++)
